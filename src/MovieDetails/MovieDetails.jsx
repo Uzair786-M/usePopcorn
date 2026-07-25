@@ -58,6 +58,10 @@ const MovieDetails = ({ isSelectedId, onCloseMovie, setWatched, watched }) => {
   useEffect(() => {
     if (!title) return;
     document.title = `Movie | ${title}`;
+
+    // Cleanup function
+
+    return () => (document.title = "usePopcorn");
   }, [title]);
 
   // const userRatingWatched = watched
